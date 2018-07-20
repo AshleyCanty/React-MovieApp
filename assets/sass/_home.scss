@@ -1,0 +1,45 @@
+.home-page {
+  .container{
+    // padding-top: 117px;
+    z-index: -1;
+    width: 100%;
+    background: #202020;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px -23px 200px 11px rgba(0,0,0,0.75);
+
+    .movie-card {
+      // height: 50vh;
+      width: 30%;
+      min-width: 300px;
+      padding-bottom: 15px;
+      margin: 5px;
+      box-shadow: 0 0 5px 0px #b2b2b2;
+      // display: flex;
+      // flex-direction: row;
+      // flex-wrap: nowrap;
+
+      .title {
+        text-align: center;
+        font-weight: 300;
+        margin: 12px 0;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        margin:0 auto;
+      }
+    }
+  }
+
+  .social-bar{
+    background: #1d1d1d;
+    box-shadow: 3px 3px 11px -1px #000;
+    height: 40px;
+    width: 100%;
+  }
+}
