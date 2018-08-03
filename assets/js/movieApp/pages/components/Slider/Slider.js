@@ -45,6 +45,7 @@ export default class Slider extends Component {
     const wholePath = this.state.wholePath
     const title = this.state.movieList[this.state.currentIndex].title
     const overview = this.state.movieList[this.state.currentIndex].overview
+    const id = this.state.movieList[this.state.currentIndex].id
     const releaseDate = this.state.movieList[this.state.currentIndex].release_date
     if(wholePath === prevState.wholePath){
       let path = currentMovie.backdrop_path
@@ -53,6 +54,7 @@ export default class Slider extends Component {
         wholePath: apiImageURL + path,
         title,
         overview,
+        id,
         releaseDate
       })
     }
@@ -106,13 +108,13 @@ export default class Slider extends Component {
       <div className="slider">
         <div className="main-image">
           <div href="#" className="arrows left-arrow" onClick={this.prevBtn}>
-              <i className="fas fa-chevron-left"></i>
+              <i className="fas fa-caret-left"></i>
           </div>
           <div href="#" className="arrows right-arrow" onClick={this.nextBtn}>
-              <i className="fas fa-chevron-right"></i>
+              <i className="fas fa-caret-right"></i>
           </div>
           <div className="image-1" style={
-            this.state.movieList ? { backgroundImage: `linear-gradient(to top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%), url(${this.state.wholePath}) ` } : { backgroundImage: `url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)` }
+            this.state.movieList ? { backgroundImage: `linear-gradient(rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%, rgba(0,0,0,0) 0%), url(${this.state.wholePath}) ` } : { backgroundImage: `url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)` }
           }>
           </div>
           <div className="details">
@@ -122,7 +124,7 @@ export default class Slider extends Component {
             <div className="genres">
               {this.genreDisplay()}
             </div>
-            <a href="/movie/id" className="movieLink">View more details...</a>
+            <Link to={`/movie/${this.state.id}`} className="movieLink">View more details...</Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 128:
+/***/ 134:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16,33 +16,37 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(16);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRouterDom = __webpack_require__(33);
+var _reactRouterDom = __webpack_require__(26);
 
-var _axios = __webpack_require__(21);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _Header = __webpack_require__(147);
+var _Header = __webpack_require__(154);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Home = __webpack_require__(149);
+var _Footer = __webpack_require__(153);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Home = __webpack_require__(156);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Listings = __webpack_require__(150);
+var _Listings = __webpack_require__(157);
 
 var _Listings2 = _interopRequireDefault(_Listings);
 
-var _Movie = __webpack_require__(151);
+var _Movie = __webpack_require__(158);
 
 var _Movie2 = _interopRequireDefault(_Movie);
 
-var _Slider = __webpack_require__(76);
+var _Slider = __webpack_require__(78);
 
 var _Slider2 = _interopRequireDefault(_Slider);
 
@@ -85,7 +89,8 @@ var App = function (_Component) {
           _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Header2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Listings2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/movie/:credits', component: _Movie2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/movie/:credits', component: _Movie2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Footer2.default })
         )
       );
     }
@@ -98,7 +103,7 @@ exports.default = App;
 
 /***/ }),
 
-/***/ 147:
+/***/ 153:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -114,13 +119,13 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(16);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRouterDom = __webpack_require__(33);
+var _reactRouterDom = __webpack_require__(26);
 
-var _axios = __webpack_require__(21);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -154,87 +159,93 @@ var Header = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container header-wrap' },
+        { className: 'container footer-wrap' },
         _react2.default.createElement(
-          'header',
-          null,
+          'div',
+          { className: 'footer' },
           _react2.default.createElement(
             'div',
-            { className: 'leftMenu' },
+            { className: 'contact' },
             _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/', className: 'logo' },
-              _react2.default.createElement(
-                'p',
-                { className: 'title' },
-                'The ',
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Reel'
-                )
-              )
+              'h4',
+              null,
+              'Have questions?'
             ),
             _react2.default.createElement(
               'div',
-              { className: 'browse-dropdown' },
-              'Browse',
-              _react2.default.createElement('i', { className: 'fas fa-angle-down' })
+              { className: 'phone' },
+              _react2.default.createElement('i', { className: 'fas fa-phone' }),
+              _react2.default.createElement(
+                'p',
+                { className: 'number' },
+                '+555-647-5555'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'support@gmail.com'
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'rightMenu' },
+            { className: 'address' },
+            _react2.default.createElement('i', { className: 'fas fa-map-marker-alt' }),
+            _react2.default.createElement(
+              'p',
+              null,
+              '18th Banana street | suite 400 ',
+              _react2.default.createElement(
+                'span',
+                null,
+                'Narnia, Mo 83028'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'social-row' },
             _react2.default.createElement(
               'div',
-              { className: 'social-row' },
+              { className: 'icon-wrap' },
               _react2.default.createElement(
-                'div',
-                { className: 'icon-wrap' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Follow us!'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#' },
-                  _react2.default.createElement('i', { className: 'fab fa-twitter' })
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#' },
-                  _react2.default.createElement('i', { className: 'fab fa-facebook-square' })
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#' },
-                  _react2.default.createElement('i', { className: 'fab fa-pinterest-p' })
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#' },
-                  _react2.default.createElement('i', { className: 'fab fa-instagram' })
-                )
+                'a',
+                { href: '#' },
+                _react2.default.createElement('i', { className: 'fab fa-twitter' })
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: '#' },
+                _react2.default.createElement('i', { className: 'fab fa-facebook-square' })
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: '#' },
+                _react2.default.createElement('i', { className: 'fab fa-pinterest-p' })
+              ),
+              _react2.default.createElement(
+                'a',
+                { href: '#' },
+                _react2.default.createElement('i', { className: 'fab fa-instagram' })
               )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'copyright' },
+            _react2.default.createElement(
+              'p',
+              { className: 'icon' },
+              '\u24B8'
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'form' },
-              _react2.default.createElement('input', { type: 'text', className: 'search', placeholder: 'Search...' }),
+              'p',
+              { className: 'text' },
+              '2018 the reel. ',
               _react2.default.createElement(
-                'button',
-                { type: 'submit', className: 'btn' },
-                _react2.default.createElement('i', { className: 'fa fa-search' })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'user-wrapper' },
-              _react2.default.createElement(
-                'div',
-                { className: 'user-img' },
-                _react2.default.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' })
+                'span',
+                null,
+                'all rights reserved.'
               )
             )
           )
@@ -250,33 +261,7 @@ exports.default = Header;
 
 /***/ }),
 
-/***/ 148:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(16);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _App = __webpack_require__(128);
-
-var _App2 = _interopRequireDefault(_App);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var app = document.getElementById('app');
-
-_reactDom2.default.render(_react2.default.createElement(_App2.default, null), app);
-
-/***/ }),
-
-/***/ 149:
+/***/ 154:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -292,15 +277,309 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(16);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _axios = __webpack_require__(21);
+var _reactRouterDom = __webpack_require__(26);
+
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _Slider = __webpack_require__(76);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Header = function (_Component) {
+  _inherits(Header, _Component);
+
+  function Header() {
+    _classCallCheck(this, Header);
+
+    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
+
+    _this.state = {
+      SearchQuery: '',
+      MovieData: [],
+      MovieDropdown: '',
+      userData: ''
+    };
+    return _this;
+  }
+
+  _createClass(Header, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var header = document.getElementById('header');
+      var logo = document.getElementById('logo');
+
+      window.addEventListener('scroll', function () {
+        window.scrollY > 0 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { id: 'header', className: 'container header-wrap' },
+        _react2.default.createElement(
+          'header',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'leftMenu' },
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/', className: 'logo' },
+              _react2.default.createElement('div', { className: 'cover' }),
+              _react2.default.createElement('img', { src: './img/icon.png' }),
+              _react2.default.createElement(
+                'p',
+                { className: 'title' },
+                'The ',
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Reel'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.NavLink,
+                  { to: '/', activeClassName: 'active' },
+                  'Home'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'browse-dropdown', onMouseOver: this.displayDropdown },
+                    'Browse',
+                    _react2.default.createElement('i', { id: 'angle-down', className: 'fas fa-angle-down' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { id: 'browser-box' },
+                  _react2.default.createElement(
+                    'ul',
+                    null,
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'action'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'adventure'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'horror'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'comedy'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'fantasy'
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'rightMenu' },
+            _react2.default.createElement(
+              'div',
+              { className: 'form' },
+              _react2.default.createElement('input', { type: 'text', className: 'search', placeholder: 'Search...' }),
+              _react2.default.createElement(
+                'button',
+                { type: 'submit', className: 'btn' },
+                _react2.default.createElement('i', { className: 'fa fa-search' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'user-wrapper' },
+              _react2.default.createElement('div', { className: 'border' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'notification' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'counter' },
+                  _react2.default.createElement(
+                    'p',
+                    { className: 'number' },
+                    '2'
+                  )
+                ),
+                _react2.default.createElement('i', { className: 'fas fa-bell' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'user-dropdown' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'user-img' },
+                  _react2.default.createElement('i', { className: 'fa fa-user', 'aria-hidden': 'true' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'user-box' },
+                  _react2.default.createElement(
+                    'ul',
+                    { id: 'user-list' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'Profile'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'Settings'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'Support'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/' },
+                        'Log out'
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Header;
+}(_react.Component);
+
+exports.default = Header;
+
+/***/ }),
+
+/***/ 155:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _App = __webpack_require__(134);
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = document.getElementById('app');
+
+_reactDom2.default.render(_react2.default.createElement(_App2.default, null), app);
+
+/***/ }),
+
+/***/ 156:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(12);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _axios = __webpack_require__(20);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _Slider = __webpack_require__(78);
 
 var _Slider2 = _interopRequireDefault(_Slider);
 
@@ -384,7 +663,7 @@ exports.default = Home;
 
 /***/ }),
 
-/***/ 150:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -400,13 +679,13 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(16);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRouterDom = __webpack_require__(33);
+var _reactRouterDom = __webpack_require__(26);
 
-var _axios = __webpack_require__(21);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -433,7 +712,7 @@ var Listings = function (_Component) {
     _this.showMovies = function () {
       var imgURL = 'http://image.tmdb.org/t/p/original';
       if (_this.state.movieList) {
-        return _this.state.movieList.reverse().map(function (item, i) {
+        return _this.state.movieList.slice(0, 12).reverse().map(function (item, i) {
           return _react2.default.createElement(
             'div',
             { className: 'movie-card', onClick: _this.cardHandler, key: i },
@@ -477,6 +756,21 @@ var Listings = function (_Component) {
         { className: 'listings-page' },
         _react2.default.createElement(
           'div',
+          { className: 'top-text' },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Popular Movies'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { className: 'view-all', to: '' },
+            'view all popular movies',
+            _react2.default.createElement('i', { className: 'fas fa-arrow-circle-right' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
           { className: 'container' },
           this.showMovies()
         )
@@ -491,7 +785,7 @@ exports.default = Listings;
 
 /***/ }),
 
-/***/ 151:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,17 +801,19 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(16);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRouterDom = __webpack_require__(33);
+var _reactRouter = __webpack_require__(289);
 
-var _reactLazyHero = __webpack_require__(261);
+var _reactRouterDom = __webpack_require__(26);
+
+var _reactLazyHero = __webpack_require__(267);
 
 var _reactLazyHero2 = _interopRequireDefault(_reactLazyHero);
 
-var _axios = __webpack_require__(21);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -529,7 +825,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _require = __webpack_require__(77),
+var _require = __webpack_require__(79),
     apiImageURL = _require.apiImageURL,
     apiGenreID = _require.apiGenreID,
     apiURL = _require.apiURL,
@@ -543,13 +839,165 @@ var Movie = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Movie.__proto__ || Object.getPrototypeOf(Movie)).call(this));
 
+    _this.genreFilter = function (obj) {
+      if (obj != null && obj != undefined) {
+        var x = obj.genres.map(function (item, i) {
+          return _this.state.allGenres.filter(function (g) {
+            return g.id === item.id;
+          });
+        });
+        return x;
+      } else {
+        console.log('Loading movie details');
+      }
+    };
+
+    _this.leftArrow = function () {
+      if (_this.state.n > 0 && _this.state.n <= _this.state.similarMovies.length - 1) {
+        _this.setState({ n: _this.state.n - 1 });
+      }
+    };
+
+    _this.rightArrow = function () {
+      if (_this.state.n + 6 == _this.state.similarMovies.length - 1) {
+        _this.setState({ n: _this.state.n });
+      } else if (_this.state.n >= 0 && _this.state.n != _this.state.similarMovies.length - 1) {
+        _this.setState({ n: _this.state.n + 1 });
+      }
+    };
+
+    _this.similarGenreDisplay = function (n) {
+      return _this.state.similarMovies.slice(n, n + 6).map(function (item, i) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'movie-card', key: i, style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
+          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id }),
+          _react2.default.createElement(
+            'div',
+            { className: 'number-rating' },
+            _react2.default.createElement('i', { className: 'fas fa-star' }),
+            _react2.default.createElement(
+              'p',
+              { className: 'rating' },
+              item.vote_average
+            )
+          )
+        );
+      });
+    };
+
+    _this.similarGenre = function () {
+      if (_this.state.currentGenres) {
+        var string = '';
+        var c = 0;
+        return _this.state.currentGenres.map(function (i) {
+          if (c == _this.state.currentGenres.length - 1) {
+            string += i[0].id;
+          } else {
+            string += i[0].id + '|';
+          }
+          c++;
+          return string;
+        });
+      }
+    };
+
+    _this.genreDisplay = function () {
+      if (_this.state.currentGenres) {
+        return _this.state.currentGenres.map(function (item, i) {
+          return _react2.default.createElement(
+            'p',
+            { className: 'genre', key: i },
+            item[0].name
+          );
+        });
+      }
+    };
+
+    _this.getCastInfo = function () {
+      var actorsList = _this.state.actors;
+      var mainObject = {};
+      var promises = [];
+      var actorsImageList = [];
+
+      if (actorsList != null && actorsList != undefined) {
+        // console.log('called getcastinfo')
+        actorsList.map(function (item, i) {
+          promises.push(_axios2.default.get('/api/actor/' + item.id));
+        });
+        // axios.all(promises)
+        //   .then(axios.spread((...args) => {
+        //     for (let i = 0; i < args.length; i++) {
+        //       console.log(args[i].data)
+        //     }
+        //   })
+        // )
+
+        //easier, direct approach
+        _axios2.default.all(promises).then(function (res) {
+          for (var i = 0; i < res.length; i++) {
+            actorsImageList.push(res[i].data);
+          }
+          if (actorsImageList.length > 0) {
+            _this.setState({ actorsImageList: actorsImageList });
+
+            _this.state.actorsImageList.map(function (item, i) {});
+          }
+        });
+      } else {
+        console.log('Nothing here');
+      }
+    };
+
+    _this.castDisplay = function () {
+      var character = '';
+      var name = '';
+      var path = '';
+
+      return _this.state.actorsImageList.map(function (item, i) {
+        character = _this.state.actors[i].character;
+        name = _this.state.actors[i].name;
+        path = item.profiles[0].file_path;
+        // <div className="cast-img" style={{backgroundImage: `url(${apiImageURL}${path})`}}></div>
+        return _react2.default.createElement(
+          'div',
+          { className: 'cast-member', key: i },
+          _react2.default.createElement(
+            'div',
+            { className: 'img-wrap' },
+            _react2.default.createElement('div', { className: 'filter' }),
+            _react2.default.createElement('img', { className: 'cast-img', src: apiImageURL + path })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'name-wrap' },
+            _react2.default.createElement(
+              'h5',
+              { className: 'name' },
+              name
+            ),
+            _react2.default.createElement(
+              'h5',
+              { className: 'character' },
+              character
+            )
+          )
+        );
+      });
+    };
+
     _this.state = {
       idValue: '',
       idType: '',
       allGenres: [],
       credits: [],
       movie: [],
-      movieBackdrop: ''
+      movieBackdrop: '',
+      actors: [],
+      actorsImageList: [],
+      similarMovies: [],
+      newRoute: '',
+      n: 0
     };
     return _this;
   }
@@ -567,32 +1015,60 @@ var Movie = function (_Component) {
           history = _props.history;
 
       var id = match.params.credits;
+      var length = 0;
+      var otherMovies = '';
+
       _axios2.default.get('/api/genres').then(function (response) {
         var allGenres = response.data;
-        console.log(allGenres);
-
         _this2.setState({ allGenres: allGenres });
       });
 
+      _axios2.default.get('/api/movies').then(function (response) {
+        var movieList = response.data.results.slice(0, 5).reverse().map(function (item, i) {
+          return item;
+        });
+        _this2.setState({
+          currentGenres: _this2.genreFilter(_this2.state.movie)
+        }, function () {
+          length = _this2.state.currentGenres.length - 1;
+        });
+        otherMovies = _this2.similarGenre()[length];
+        if (otherMovies != null && otherMovies !== undefined && otherMovies != '') {
+          _axios2.default.get('/api/movieGenre/' + otherMovies).then(function (response) {
+            _this2.setState({ similarMovies: response.data.results });
+          });
+        }
+      });
+
       _axios2.default.get('/api/credits/' + id).then(function (response) {
-        console.log(id);
         var credits = response.data;
-        console.log(credits);
+        var actors = [];
 
         _this2.setState({ credits: credits });
+        if (response.data.cast != null && response.data.cast != undefined) {
+          actors = response.data.cast.slice(0, 5);
+          if (actors != null && actors != undefined) {
+            _this2.setState({ actors: actors });
+            _this2.getCastInfo();
+          }
+        }
       });
 
       _axios2.default.get('/api/info/' + id).then(function (response) {
         var movie = response.data;
         var movieBackdrop = apiImageURL + movie.backdrop_path;
-        console.log(movieBackdrop);
-        console.log(movie);
-
+        // console.log(movie)
         _this2.setState({
           movie: movie,
           movieBackdrop: movieBackdrop
         });
       });
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var routeChanged = nextProps.location !== this.props.location;
+      this.setState({ newRoute: routeChanged });
     }
   }, {
     key: 'render',
@@ -602,311 +1078,204 @@ var Movie = function (_Component) {
         { className: 'movie' },
         _react2.default.createElement(
           'div',
-          { className: 'container' },
-          _react2.default.createElement(
-            'div',
-            { className: 'top-image' },
-            _react2.default.createElement(_reactLazyHero2.default, {
-              className: 'image',
-              imageSrc: this.state.movieBackdrop,
-              isFixed: true,
-              opacity: 1
-            })
-          ),
+          { className: 'container', style: { backgroundImage: 'linear-gradient(rgba(27,15,45,.85) 100%, rgba(27,15,45,.85) 100%), url(' + this.state.movieBackdrop + ')' } },
           _react2.default.createElement('div', { className: 'filter-1' }),
           _react2.default.createElement('div', { className: 'filter-2' }),
           _react2.default.createElement(
             'div',
-            { className: 'details' },
+            { className: 'wrapper' },
             _react2.default.createElement(
               'div',
-              { className: 'data-left' },
+              { className: 'details' },
               _react2.default.createElement(
                 'div',
-                { className: 'title-area' },
+                { className: 'data-left' },
                 _react2.default.createElement(
-                  'h3',
-                  null,
-                  this.state.movie.title
+                  'div',
+                  { className: 'inner-wrapper' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'title-area' },
+                    _react2.default.createElement(
+                      'h3',
+                      null,
+                      this.state.movie.title
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'number-rating' },
+                      _react2.default.createElement('i', { className: 'fas fa-star' }),
+                      _react2.default.createElement(
+                        'p',
+                        { className: 'rating' },
+                        this.state.movie.vote_average
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'extra-data' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'wrap' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'genres' },
+                        this.genreDisplay()
+                      ),
+                      _react2.default.createElement('div', { className: 'circle-split' }),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'time-rating' },
+                        _react2.default.createElement(
+                          'p',
+                          { className: 'runtime' },
+                          this.state.movie.runtime,
+                          'MIN'
+                        ),
+                        _react2.default.createElement('div', { className: 'circle-split' }),
+                        _react2.default.createElement(
+                          'p',
+                          { className: 'release-year' },
+                          '2018'
+                        ),
+                        _react2.default.createElement('div', { className: 'circle-split' }),
+                        _react2.default.createElement(
+                          'p',
+                          { className: 'movie-rating' },
+                          'PG-13'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'options' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'wrap' },
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'watch-btn' },
+                          'Watch now'
+                        ),
+                        _react2.default.createElement(
+                          'div',
+                          { className: 'trailer-btn' },
+                          'trailer'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'like-btn' },
+                        _react2.default.createElement('i', { className: 'far fa-heart' })
+                      )
+                    )
+                  )
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'number-rating' },
-                  _react2.default.createElement('i', { className: 'fas fa-star' }),
+                  { className: 'overview' },
                   _react2.default.createElement(
-                    'p',
-                    { className: 'rating' },
-                    '8.7'
+                    'h4',
+                    { className: 'overview-title' },
+                    'Synopsis'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      this.state.movie.overview
+                    )
                   )
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'extra-data' },
+                { className: 'data-right' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'wrap' },
+                  { className: 'box-1' },
                   _react2.default.createElement(
-                    'div',
-                    { className: 'genres' },
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Action'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Adventure'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Comedy'
-                    )
+                    'h5',
+                    null,
+                    'Directed by'
                   ),
-                  _react2.default.createElement('div', { className: 'circle-split' }),
                   _react2.default.createElement(
-                    'div',
-                    { className: 'time-rating' },
-                    _react2.default.createElement(
-                      'p',
-                      { className: 'runtime' },
-                      '2HR 15MIN'
-                    ),
-                    _react2.default.createElement('div', { className: 'circle-split' }),
-                    _react2.default.createElement(
-                      'p',
-                      { className: 'release-year' },
-                      '2018'
-                    ),
-                    _react2.default.createElement('div', { className: 'circle-split' }),
-                    _react2.default.createElement(
-                      'p',
-                      { className: 'movie-rating' },
-                      'PG-13'
-                    )
+                    'p',
+                    null,
+                    'Ryan Coogler'
                   )
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'options' },
+                  { className: 'box-2' },
+                  _react2.default.createElement(
+                    'h5',
+                    null,
+                    'Recommended by'
+                  ),
                   _react2.default.createElement(
                     'div',
                     { className: 'wrap' },
                     _react2.default.createElement(
                       'div',
-                      { className: 'watch-btn' },
-                      'Watch now'
+                      { className: 'img-wrap' },
+                      _react2.default.createElement('div', { className: 'img-1', style: { backgroundImage: 'url(https://www.chroniquedisney.fr/imgDossier/marvel/2017-visionnage-defenders-02.jpg)' } }),
+                      _react2.default.createElement('div', { className: 'img-2', style: { backgroundImage: 'url(https://thegrio.com/wp-content/uploads/2017/10/Andre-3000.jpg)' } })
                     ),
                     _react2.default.createElement(
                       'div',
-                      { className: 'trailer-btn' },
-                      'trailer'
+                      { className: 'names' },
+                      'Roe and Motif'
                     )
+                  )
+                )
+              ),
+              _react2.default.createElement('div', { className: 'poster-img', style: { backgroundImage: 'url(' + apiImageURL + this.state.movie.poster_path + ')' } }),
+              _react2.default.createElement(
+                'div',
+                { className: 'inner-wrap' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'cast' },
+                  _react2.default.createElement(
+                    'h5',
+                    null,
+                    'Starring'
                   ),
                   _react2.default.createElement(
                     'div',
-                    { className: 'like-btn' },
-                    _react2.default.createElement('i', { className: 'far fa-heart' })
+                    { className: 'wrap' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'cast-wrap' },
+                      this.castDisplay()
+                    )
                   )
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'overview' },
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'Synopsis'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. '
-                  )
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'data-right' },
-              _react2.default.createElement(
-                'div',
-                { className: 'box-1' },
+                { className: 'related-movies' },
                 _react2.default.createElement(
                   'h5',
                   null,
-                  'Directed by'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  'Ryan Coogler'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'box-2' },
-                _react2.default.createElement(
-                  'h5',
-                  null,
-                  'Recommended by'
+                  'Related movies'
                 ),
                 _react2.default.createElement(
                   'div',
                   { className: 'wrap' },
+                  _react2.default.createElement('i', { className: 'fas fa-angle-left', onClick: this.leftArrow }),
                   _react2.default.createElement(
                     'div',
-                    { className: 'img-wrap' },
-                    _react2.default.createElement('div', { className: 'img-1', style: { backgroundImage: 'url(https://www.chroniquedisney.fr/imgDossier/marvel/2017-visionnage-defenders-02.jpg)' } }),
-                    _react2.default.createElement('div', { className: 'img-2', style: { backgroundImage: 'url(https://thegrio.com/wp-content/uploads/2017/10/Andre-3000.jpg)' } })
+                    { className: 'movie-wrap' },
+                    this.similarGenreDisplay(this.state.n)
                   ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'names' },
-                    'Roe and Motif'
-                  )
+                  _react2.default.createElement('i', { className: 'fas fa-angle-right', onClick: this.rightArrow })
                 )
               )
-            ),
-            _react2.default.createElement('div', { className: 'poster-img', style: { backgroundImage: 'url(' + apiImageURL + this.state.movie.poster_path + ')' } })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'cast' },
-            _react2.default.createElement(
-              'h5',
-              null,
-              'Starring'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'wrap' },
-              _react2.default.createElement('i', { className: 'fas fa-angle-left' }),
-              _react2.default.createElement(
-                'div',
-                { className: 'cast-wrap' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'cast-member' },
-                  _react2.default.createElement('div', { className: 'cast-img' }),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'name' },
-                    'Mustafa Shakir'
-                  ),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'count' },
-                    '38 Movies'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'cast-member' },
-                  _react2.default.createElement('div', { className: 'cast-img' }),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'name' },
-                    'Mustafa Shakir'
-                  ),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'count' },
-                    '38 Movies'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'cast-member' },
-                  _react2.default.createElement('div', { className: 'cast-img' }),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'name' },
-                    'Mustafa Shakir'
-                  ),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'count' },
-                    '38 Movies'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'cast-member' },
-                  _react2.default.createElement('div', { className: 'cast-img' }),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'name' },
-                    'Mustafa Shakir'
-                  ),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'count' },
-                    '38 Movies'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'cast-member' },
-                  _react2.default.createElement('div', { className: 'cast-img' }),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'name' },
-                    'Mustafa Shakir'
-                  ),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'count' },
-                    '38 Movies'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'cast-member' },
-                  _react2.default.createElement('div', { className: 'cast-img' }),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'name' },
-                    'Mustafa Shakir'
-                  ),
-                  _react2.default.createElement(
-                    'h5',
-                    { className: 'count' },
-                    '38 Movies'
-                  )
-                )
-              ),
-              _react2.default.createElement('i', { className: 'fas fa-angle-right' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'related-movies' },
-            _react2.default.createElement(
-              'h5',
-              null,
-              'Related'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'wrap' },
-              _react2.default.createElement('i', { className: 'fas fa-angle-left' }),
-              _react2.default.createElement(
-                'div',
-                { className: 'movie-wrap' },
-                _react2.default.createElement('div', { className: 'movie-card' }),
-                _react2.default.createElement('div', { className: 'movie-card' }),
-                _react2.default.createElement('div', { className: 'movie-card' }),
-                _react2.default.createElement('div', { className: 'movie-card' }),
-                _react2.default.createElement('div', { className: 'movie-card' }),
-                _react2.default.createElement('div', { className: 'movie-card' })
-              ),
-              _react2.default.createElement('i', { className: 'fas fa-angle-right' })
             )
           )
         )
@@ -921,7 +1290,7 @@ exports.default = Movie;
 
 /***/ }),
 
-/***/ 76:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -937,13 +1306,13 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(16);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRouterDom = __webpack_require__(33);
+var _reactRouterDom = __webpack_require__(26);
 
-var _axios = __webpack_require__(21);
+var _axios = __webpack_require__(20);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -955,7 +1324,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _require = __webpack_require__(77),
+var _require = __webpack_require__(79),
     apiImageURL = _require.apiImageURL,
     apiGenreID = _require.apiGenreID,
     apiURL = _require.apiURL,
@@ -1062,6 +1431,7 @@ var Slider = function (_Component) {
       var wholePath = this.state.wholePath;
       var title = this.state.movieList[this.state.currentIndex].title;
       var overview = this.state.movieList[this.state.currentIndex].overview;
+      var id = this.state.movieList[this.state.currentIndex].id;
       var releaseDate = this.state.movieList[this.state.currentIndex].release_date;
       if (wholePath === prevState.wholePath) {
         var path = currentMovie.backdrop_path;
@@ -1070,6 +1440,7 @@ var Slider = function (_Component) {
           wholePath: apiImageURL + path,
           title: title,
           overview: overview,
+          id: id,
           releaseDate: releaseDate
         });
       }
@@ -1086,14 +1457,14 @@ var Slider = function (_Component) {
           _react2.default.createElement(
             "div",
             { href: "#", className: "arrows left-arrow", onClick: this.prevBtn },
-            _react2.default.createElement("i", { className: "fas fa-chevron-left" })
+            _react2.default.createElement("i", { className: "fas fa-caret-left" })
           ),
           _react2.default.createElement(
             "div",
             { href: "#", className: "arrows right-arrow", onClick: this.nextBtn },
-            _react2.default.createElement("i", { className: "fas fa-chevron-right" })
+            _react2.default.createElement("i", { className: "fas fa-caret-right" })
           ),
-          _react2.default.createElement("div", { className: "image-1", style: this.state.movieList ? { backgroundImage: "linear-gradient(to top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%), url(" + this.state.wholePath + ") " } : { backgroundImage: "url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)" } }),
+          _react2.default.createElement("div", { className: "image-1", style: this.state.movieList ? { backgroundImage: "linear-gradient(rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%, rgba(0,0,0,0) 0%), url(" + this.state.wholePath + ") " } : { backgroundImage: "url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)" } }),
           _react2.default.createElement(
             "div",
             { className: "details" },
@@ -1113,8 +1484,8 @@ var Slider = function (_Component) {
               this.genreDisplay()
             ),
             _react2.default.createElement(
-              "a",
-              { href: "/movie/id", className: "movieLink" },
+              _reactRouterDom.Link,
+              { to: "/movie/" + this.state.id, className: "movieLink" },
               "View more details..."
             )
           )
@@ -1130,14 +1501,16 @@ exports.default = Slider;
 
 /***/ }),
 
-/***/ 77:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = {
+  //https://developers.themoviedb.org/3/getting-started/introduction
   // check documentation
+  apiActorURL: 'https://api.themoviedb.org/3/person/',
   apiImageURL: 'https://image.tmdb.org/t/p/original',
   apiGenreID: 'https://api.themoviedb.org/3/genre/movie/list?api_key=f20135b292080c1a6bdcdd3cf8616d48',
   apiURL: 'https://api.themoviedb.org/3',
@@ -1146,4 +1519,4 @@ module.exports = {
 
 /***/ })
 
-},[148]);
+},[155]);

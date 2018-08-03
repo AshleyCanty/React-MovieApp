@@ -1,9 +1,54 @@
 .listings-page{
+  background: #f4f4f4;
+  padding-bottom: 30px;
+  .top-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 30px;
+
+    h4{
+      color: #424242;
+    }
+
+    .view-all {
+      font-size: 1rem;
+      color: #fff;
+      text-decoration: none;
+      text-transform: capitalize;
+      width: auto;
+      padding: 10px 20px;
+      background: #ff9514;
+      border-radius: 8px;
+      transition: all .3s ease-out;
+
+      &:hover{
+        background: #d88022;
+        // transform: translate(2%, -2%);
+        // box-shadow: -2px 1px 3px 1px rgba(0,0,0,.3);
+
+        .fas {
+          transform: translateX(30%);
+        }
+      }
+
+      .fas{
+        margin-left: 10px;
+        transition: all .3s ease-out;
+      }
+    }
+  }
   .container{
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #f4f4f4;
     padding-top: 20px;
     width: 100%;
-    background: #f4f4f4;
-    box-shadow: inset 0px -23px 200px -25px rgba(0,0,0,0.75);
+    // box-shadow: inset 0px -23px 200px -25px rgba(0,0,0,0.75);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap-reverse;

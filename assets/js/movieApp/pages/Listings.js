@@ -32,7 +32,7 @@ export default class Listings extends Component {
   showMovies = () => {
     const imgURL = 'http://image.tmdb.org/t/p/original'
     if (this.state.movieList) {
-      return (this.state.movieList.reverse().map((item, i) => {
+      return (this.state.movieList.slice(0,12).reverse().map((item, i) => {
         return (
           <div className="movie-card" onClick={this.cardHandler} key={i}>
             <Link to={`/movie/${item.id}`}><img id={`${item.id}`} src={`${imgURL}${item.poster_path}`} /></Link>
@@ -46,6 +46,10 @@ export default class Listings extends Component {
   render () {
     return (
       <div className="listings-page">
+        <div className="top-text">
+          <h4>Popular Movies</h4>
+          <Link className="view-all" to="">view all popular movies<i className="fas fa-arrow-circle-right"></i></Link>
+        </div>
         <div className="container">
           { this.showMovies() }
         </div>

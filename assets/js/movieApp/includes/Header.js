@@ -1,8 +1,7 @@
 import React, { Component} from 'react'
 import ReactDOM from 'react-dom'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import axios from 'axios'
-
 export default class Header extends Component {
   constructor () {
     super()
@@ -14,30 +13,51 @@ export default class Header extends Component {
     }
   }
 
+  componentDidMount(){
+    const header = document.getElementById('header')
+    const logo = document.getElementById('logo')
+
+    window.addEventListener('scroll', () => {
+          (window.scrollY >  0) ? header.classList.add('scrolled') : header.classList.remove('scrolled')
+    })
+  }
+
+
     render () {
       return (
-        <div className="container header-wrap">
+        <div id="header" className="container header-wrap">
           <header>
 
             <div className={'leftMenu'}>
 
               <Link to="/" className={'logo'}>
+              <div className="cover"></div>
+                <img src="./img/icon.png" />
                 <p className={'title'}>The <span>Reel</span></p>
               </Link>
-              <div className={'browse-dropdown'}>Browse
-                <i className={'fas fa-angle-down'}></i>
-              </div>
+              <ul>
+                <li>
+                  <NavLink to="/" activeClassName="active">Home</NavLink>
+                </li>
+                <li>
+                  <Link to="">
+                    <div className={'browse-dropdown'} onMouseOver={this.displayDropdown}>Browse
+                      <i id="angle-down" className={'fas fa-angle-down'}></i>
+                    </div>
+                  </Link>
+                  <div id="browser-box">
+                    <ul>
+                      <li><Link to="/">action</Link></li>
+                      <li><Link to="/">adventure</Link></li>
+                      <li><Link to="/">horror</Link></li>
+                      <li><Link to="/">comedy</Link></li>
+                      <li><Link to="/">fantasy</Link></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div className={'rightMenu'}>
-            <div className="social-row">
-              <div className="icon-wrap">
-                <p>Follow us!</p>
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-facebook-square"></i></a>
-                <a href="#"><i className="fab fa-pinterest-p"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
-              </div>
-            </div>
               <div className={'form'}>
                 <input type="text" className={'search'} placeholder="Search..."/>
                 <button type="submit" className={'btn'}>
@@ -45,8 +65,25 @@ export default class Header extends Component {
                 </button>
               </div>
               <div className="user-wrapper">
-                <div className={'user-img'}>
-                  <i className="fa fa-user" aria-hidden="true"></i>
+              <div className="border"></div>
+                <div className="notification">
+                  <div className="counter">
+                    <p className="number">2</p>
+                  </div>
+                  <i className="fas fa-bell"></i>
+                </div>
+                <div className="user-dropdown">
+                  <div className={'user-img'}>
+                    <i className="fa fa-user" aria-hidden="true"></i>
+                  </div>
+                  <div className="user-box">
+                    <ul id="user-list">
+                      <li><Link to="/">Profile</Link></li>
+                      <li><Link to="/">Settings</Link></li>
+                      <li><Link to="/">Support</Link></li>
+                      <li><Link to="/">Log out</Link></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
