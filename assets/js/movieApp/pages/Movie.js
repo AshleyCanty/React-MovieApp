@@ -21,15 +21,20 @@ export default class Movie extends Component {
       actorsImageList: [],
       similarMovies: [],
       newRoute: '',
-      n: 0
+      idTracker: 0
     }
   }
+ componenShouldUpdate(nextProps){
+   console.log('calling function')
+    console.log(nextProps)
+    console.log(this.props)
+ }
 
   init = () => {
     const { match, history } = this.props
     const id = match.params.credits
-    console.log(this.props.location.pathname)
-    console.log(id)
+    // console.log(this.props.location.pathname)
+    // console.log(id)
     let length = 0
     let otherMovies = ''
 
@@ -79,13 +84,8 @@ export default class Movie extends Component {
     })
   }
 
-  componentWillMount(){
-
-  }
-
   componentDidMount(){
     this.init()
-    console.log('called init')
   }
 
   genreFilter = (obj) => {
@@ -114,13 +114,16 @@ export default class Movie extends Component {
       this.setState({n: (this.state.n + 1)})
     }
   }
-
+  changeData = (id) => {
+    this.setState({idTracker: id})
+    console.log(this.state.idTracker)
+  }
   similarGenreDisplay = (n) => {
     return(
       this.state.similarMovies.slice(n,n+6).map((item, i) => {
         return (
           <div className="movie-card" key={i} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}}>
-            <Link to={`/movie/${item.id}`} onClick={this.init}></Link>
+            <Link to={`/movie/${item.id}`} onClick={this.changeData(item.id)}></Link>
             <div className="number-rating">
               <i className="fas fa-star"></i>
               <p className="rating">{item.vote_average}</p>
