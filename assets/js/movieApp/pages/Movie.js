@@ -21,7 +21,7 @@ export default class Movie extends Component {
       actorsImageList: [],
       similarMovies: [],
       newRoute: '',
-      idTracker: 0
+      track: 0
     }
   }
  componenShouldUpdate(nextProps){
@@ -84,6 +84,10 @@ export default class Movie extends Component {
     })
   }
 
+  componentWillMount(){
+    // onClick={this.init}
+  }
+
   componentDidMount(){
     this.init()
   }
@@ -114,16 +118,18 @@ export default class Movie extends Component {
       this.setState({n: (this.state.n + 1)})
     }
   }
+  
   changeData = (id) => {
-    this.setState({idTracker: id})
-    console.log(this.state.idTracker)
+    this.setState({track:(this.state.track+1)})
+    console.log(this.state.track, id)
   }
+
   similarGenreDisplay = (n) => {
     return(
       this.state.similarMovies.slice(n,n+6).map((item, i) => {
         return (
-          <div className="movie-card" key={i} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}}>
-            <Link to={`/movie/${item.id}`} onClick={this.changeData(item.id)}></Link>
+          <div className="movie-card" key={i} onClick={this.changeData.bind(null,item.id)} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}}>
+            <Link to={`/movie/${item.id}`} ></Link>
             <div className="number-rating">
               <i className="fas fa-star"></i>
               <p className="rating">{item.vote_average}</p>

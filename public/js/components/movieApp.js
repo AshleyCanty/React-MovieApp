@@ -925,16 +925,16 @@ var Movie = function (_Component) {
     };
 
     _this.changeData = function (id) {
-      _this.setState({ idTracker: id });
-      console.log(_this.state.idTracker);
+      _this.setState({ track: _this.state.track + 1 });
+      console.log(_this.state.track, id);
     };
 
     _this.similarGenreDisplay = function (n) {
       return _this.state.similarMovies.slice(n, n + 6).map(function (item, i) {
         return _react2.default.createElement(
           'div',
-          { className: 'movie-card', key: i, style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
-          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id, onClick: _this.changeData(item.id) }),
+          { className: 'movie-card', key: i, onClick: _this.changeData.bind(null, item.id), style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
+          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id }),
           _react2.default.createElement(
             'div',
             { className: 'number-rating' },
@@ -1060,7 +1060,7 @@ var Movie = function (_Component) {
       actorsImageList: [],
       similarMovies: [],
       newRoute: '',
-      idTracker: 0
+      track: 0
     };
     return _this;
   }
@@ -1071,6 +1071,11 @@ var Movie = function (_Component) {
       console.log('calling function');
       console.log(nextProps);
       console.log(this.props);
+    }
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      // onClick={this.init}
     }
   }, {
     key: 'componentDidMount',

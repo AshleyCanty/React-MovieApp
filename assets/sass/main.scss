@@ -164,7 +164,7 @@ body {
                     line-height: 0px;
                     width: 100px;
                     display: block;
-                    border: 1px solid rgba(255,255,255, .5);
+                    border: 1px solid rgba(255,255,255, .4);
                     height: 0;
                     margin: 0;
                     padding: 20px;
@@ -507,16 +507,16 @@ body {
 }
 .scrolled {
   position: fixed !important;
-  background: rgba(255,255,255,1);
+  background: #39273f;
   z-index: 1000;
-  a{
-    color: #303030 !important;
-  }
-    .notification {
-      .fas {
-        color: #9b9b9b !important;
-      }
-    }
+  // a{
+  //   color: #f !important;
+  // }
+  //   .notification {
+  //     .fas {
+  //       color: #9b9b9b !important;
+  //     }
+  //   }
 
     .active {
       color: #fff !important;
@@ -525,7 +525,7 @@ body {
     }
 
     #browser-box ul {
-      background: #303030 !important;
+      background: #1b121e !important;
       li a{
         color: white !important;
       }
@@ -533,7 +533,7 @@ body {
 
     .rightMenu {
       ul {
-        background: #303030 !important;
+        background: #1b121e !important;
         li a{
           color: white !important;
         }
