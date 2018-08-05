@@ -839,6 +839,64 @@ var Movie = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Movie.__proto__ || Object.getPrototypeOf(Movie)).call(this));
 
+    _this.init = function () {
+      var _this$props = _this.props,
+          match = _this$props.match,
+          history = _this$props.history;
+
+      var id = match.params.credits;
+      console.log(_this.props.location.pathname);
+      console.log(id);
+      var length = 0;
+      var otherMovies = '';
+
+      _axios2.default.get('/api/genres').then(function (response) {
+        var allGenres = response.data;
+        _this.setState({ allGenres: allGenres });
+      });
+
+      _axios2.default.get('/api/movies').then(function (response) {
+        var movieList = response.data.results.slice(0, 5).reverse().map(function (item, i) {
+          return item;
+        });
+        _this.setState({
+          currentGenres: _this.genreFilter(_this.state.movie)
+        }, function () {
+          length = _this.state.currentGenres.length - 1;
+        });
+        otherMovies = _this.similarGenre()[length];
+        if (otherMovies != null && otherMovies !== undefined && otherMovies != '') {
+          _axios2.default.get('/api/movieGenre/' + otherMovies).then(function (response) {
+            _this.setState({ similarMovies: response.data.results });
+          });
+        }
+      });
+
+      _axios2.default.get('/api/credits/' + id).then(function (response) {
+        var credits = response.data;
+        var actors = [];
+
+        _this.setState({ credits: credits });
+        if (response.data.cast != null && response.data.cast != undefined) {
+          actors = response.data.cast.slice(0, 5);
+          if (actors != null && actors != undefined) {
+            _this.setState({ actors: actors });
+            _this.getCastInfo();
+          }
+        }
+      });
+
+      _axios2.default.get('/api/info/' + id).then(function (response) {
+        var movie = response.data;
+        var movieBackdrop = apiImageURL + movie.backdrop_path;
+        // console.log(movie)
+        _this.setState({
+          movie: movie,
+          movieBackdrop: movieBackdrop
+        });
+      });
+    };
+
     _this.genreFilter = function (obj) {
       if (obj != null && obj != undefined) {
         var x = obj.genres.map(function (item, i) {
@@ -871,7 +929,7 @@ var Movie = function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: 'movie-card', key: i, style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
-          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id }),
+          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id, onClick: _this.init }),
           _react2.default.createElement(
             'div',
             { className: 'number-rating' },
@@ -1008,67 +1066,8 @@ var Movie = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
-
-      var _props = this.props,
-          match = _props.match,
-          history = _props.history;
-
-      var id = match.params.credits;
-      var length = 0;
-      var otherMovies = '';
-
-      _axios2.default.get('/api/genres').then(function (response) {
-        var allGenres = response.data;
-        _this2.setState({ allGenres: allGenres });
-      });
-
-      _axios2.default.get('/api/movies').then(function (response) {
-        var movieList = response.data.results.slice(0, 5).reverse().map(function (item, i) {
-          return item;
-        });
-        _this2.setState({
-          currentGenres: _this2.genreFilter(_this2.state.movie)
-        }, function () {
-          length = _this2.state.currentGenres.length - 1;
-        });
-        otherMovies = _this2.similarGenre()[length];
-        if (otherMovies != null && otherMovies !== undefined && otherMovies != '') {
-          _axios2.default.get('/api/movieGenre/' + otherMovies).then(function (response) {
-            _this2.setState({ similarMovies: response.data.results });
-          });
-        }
-      });
-
-      _axios2.default.get('/api/credits/' + id).then(function (response) {
-        var credits = response.data;
-        var actors = [];
-
-        _this2.setState({ credits: credits });
-        if (response.data.cast != null && response.data.cast != undefined) {
-          actors = response.data.cast.slice(0, 5);
-          if (actors != null && actors != undefined) {
-            _this2.setState({ actors: actors });
-            _this2.getCastInfo();
-          }
-        }
-      });
-
-      _axios2.default.get('/api/info/' + id).then(function (response) {
-        var movie = response.data;
-        var movieBackdrop = apiImageURL + movie.backdrop_path;
-        // console.log(movie)
-        _this2.setState({
-          movie: movie,
-          movieBackdrop: movieBackdrop
-        });
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      var routeChanged = nextProps.location !== this.props.location;
-      this.setState({ newRoute: routeChanged });
+      this.init();
+      console.log('called init');
     }
   }, {
     key: 'render',
