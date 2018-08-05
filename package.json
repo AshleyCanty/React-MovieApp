@@ -1,11 +1,11 @@
 {
-  "name": "CodingPhase-StarterKit",
+  "name": "",
   "version": "1.0.0",
   "description": "Super Cool Framework",
   "main": "index.js",
-  "author": "joe santos garcia",
+  "author": "Ashley CAnty",
   "license": "MIT",
-  "homepage": "http://rocky.codingphase.com/",
+  "homepage": "",
   "dependencies": {
     "@material-ui/core": "^1.3.1",
     "axios": "^0.16.2",
