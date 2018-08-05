@@ -845,8 +845,8 @@ var Movie = function (_Component) {
           history = _this$props.history;
 
       var id = match.params.credits;
-      console.log(_this.props.location.pathname);
-      console.log(id);
+      // console.log(this.props.location.pathname)
+      // console.log(id)
       var length = 0;
       var otherMovies = '';
 
@@ -924,12 +924,17 @@ var Movie = function (_Component) {
       }
     };
 
+    _this.changeData = function (id) {
+      _this.setState({ idTracker: id });
+      console.log(_this.state.idTracker);
+    };
+
     _this.similarGenreDisplay = function (n) {
       return _this.state.similarMovies.slice(n, n + 6).map(function (item, i) {
         return _react2.default.createElement(
           'div',
           { className: 'movie-card', key: i, style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
-          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id, onClick: _this.init }),
+          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id, onClick: _this.changeData(item.id) }),
           _react2.default.createElement(
             'div',
             { className: 'number-rating' },
@@ -1055,19 +1060,22 @@ var Movie = function (_Component) {
       actorsImageList: [],
       similarMovies: [],
       newRoute: '',
-      n: 0
+      idTracker: 0
     };
     return _this;
   }
 
   _createClass(Movie, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {}
+    key: 'componenShouldUpdate',
+    value: function componenShouldUpdate(nextProps) {
+      console.log('calling function');
+      console.log(nextProps);
+      console.log(this.props);
+    }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.init();
-      console.log('called init');
     }
   }, {
     key: 'render',
@@ -1510,7 +1518,7 @@ module.exports = {
   //https://developers.themoviedb.org/3/getting-started/introduction
   // check documentation
   apiActorURL: 'https://api.themoviedb.org/3/person/',
-  apiImageURL: 'https://image.tmdb.org/t/p/original',
+  apiImageURL: 'http://image.tmdb.org/t/p/original',
   apiGenreID: 'https://api.themoviedb.org/3/genre/movie/list?api_key=f20135b292080c1a6bdcdd3cf8616d48',
   apiURL: 'https://api.themoviedb.org/3',
   apiKey: '?api_key=f20135b292080c1a6bdcdd3cf8616d48'
