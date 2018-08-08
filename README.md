@@ -1,5 +1,5 @@
- <div class="wrapper" style="text-align: center;">
-  <h3>React Movie App</h3>
+ <div class="wrapper" style="text-align:center;">
+  <h3 style="color:blue;">React Movie App</h3>
   <br/>
   ****************************************************************************
   <br/>
