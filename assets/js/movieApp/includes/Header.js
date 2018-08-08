@@ -12,7 +12,7 @@ export default class Header extends Component {
       userData: ''
     }
   }
-
+// <button type="submit" className={'btn'}>
   componentDidMount(){
     const header = document.getElementById('header')
     const logo = document.getElementById('logo')
@@ -29,11 +29,8 @@ export default class Header extends Component {
           <header>
 
             <div className={'leftMenu'}>
-
               <Link to="/" className={'logo'}>
-              <div className="cover"></div>
-                <img src="./img/icon.png" />
-                <p className={'title'}>The <span>Reel</span></p>
+                <p className={'title'}>The Reel</p>
               </Link>
               <ul>
                 <li>
@@ -42,10 +39,11 @@ export default class Header extends Component {
                 <li>
                   <Link to="">
                     <div className={'browse-dropdown'} onMouseOver={this.displayDropdown}>Browse
-                      <i id="angle-down" className={'fas fa-angle-down'}></i>
+                      <i id="angle-down" className={'fas fa-caret-down'}></i>
                     </div>
                   </Link>
-                  <div id="browser-box">
+                  <div className="dropbox-1">
+                  <i className="fas fa-caret-up"></i>
                     <ul>
                       <li><Link to="/">action</Link></li>
                       <li><Link to="/">adventure</Link></li>
@@ -59,24 +57,44 @@ export default class Header extends Component {
             </div>
             <div className={'rightMenu'}>
               <div className={'form'}>
-                <input type="text" className={'search'} placeholder="Search..."/>
-                <button type="submit" className={'btn'}>
-                  <i className="fa fa-search"></i>
-                </button>
+                <input type="text" className={'search'} placeholder="movies, titles, people..."/>
               </div>
               <div className="user-wrapper">
               <div className="border"></div>
                 <div className="notification">
-                  <div className="counter">
-                    <p className="number">2</p>
+                  <div className="bell-wrapper">
+                    <div className="counter">
+                      <p className="number">2</p>
+                    </div>
+                    <i className="fas fa-bell"></i>
                   </div>
-                  <i className="fas fa-bell"></i>
+                  <div className="dropbox-2">
+                  <i className="fas fa-caret-up"></i>
+                    <ul id="list">
+                      <li>
+                        <div className="mail">
+                          <img src="https://pbs.twimg.com/profile_images/625040399535636480/isqG9o0c_400x400.jpg"/>
+                          <Link to="/"><span>Hassan Wohmit</span> found your review helpful on <span className="movie-title">James and the Giant Peach</span>.</Link>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="mail">
+                          <img src="https://www.theaudiodb.com/images/media/artist/thumb/uvqtus1372530587.jpg"/>
+                          <Link to="/"><span>Sheva Bower</span> sent you a movie request.</Link>
+                        </div>
+                      </li>
+                    </ul>
+                    <div className="extra-links">
+                      <Link to="/">View all</Link>
+                    </div>
+                  </div>
                 </div>
                 <div className="user-dropdown">
                   <div className={'user-img'}>
                     <i className="fa fa-user" aria-hidden="true"></i>
                   </div>
-                  <div className="user-box">
+                  <div className="dropbox-3">
+                  <i className="fas fa-caret-up"></i>
                     <ul id="user-list">
                       <li><Link to="/">Profile</Link></li>
                       <li><Link to="/">Settings</Link></li>

@@ -17,31 +17,21 @@ export default class Header extends Component {
     render () {
       return (
         <div className="container footer-wrap">
-          <div className="footer">
-          <div className="contact">
-            <h4>Have questions?</h4>
-            <div className="phone">
-              <i className="fas fa-phone"></i>
-              <p className="number">+555-647-5555</p>
+          <div className="info">
+            <div className="contact">
+              <Link to="/">About</Link>
+              <Link to="/">Jobs</Link>
+              <Link to="/">Help</Link>
             </div>
-            <p>support@gmail.com</p>
+            <div className="desc">
+              <Link to="/">About ads</Link>
+              <Link to="/">terms of use</Link>
+              <Link to="/">privacy policy</Link>
+            </div>
           </div>
-            <div className="address">
-              <i className="fas fa-map-marker-alt"></i>
-              <p>18th Banana street | suite 400 <span>Narnia, Mo 83028</span></p>
-            </div>
-            <div className="social-row">
-              <div className="icon-wrap">
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-facebook-square"></i></a>
-                <a href="#"><i className="fab fa-pinterest-p"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
-              </div>
-            </div>
-            <div className="copyright">
-              <p className="icon">&#9400;</p>
-              <p className="text">2018 the reel. <span>all rights reserved.</span></p>
-            </div>
+          <div className="copyright">
+            <p className="icon">&#9400;</p>
+            <p className="brand">2018 the reel</p>
           </div>
         </div>
       )

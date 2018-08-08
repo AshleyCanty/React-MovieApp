@@ -21,11 +21,12 @@ export default class Movie extends Component {
       actorsImageList: [],
       similarMovies: [],
       newRoute: '',
-      track: 0
+      n: 0,
+      changeData: false
     }
   }
  componenShouldUpdate(nextProps){
-   console.log('calling function')
+   console.log('calling')
     console.log(nextProps)
     console.log(this.props)
  }
@@ -84,12 +85,15 @@ export default class Movie extends Component {
     })
   }
 
-  componentWillMount(){
-    // onClick={this.init}
-  }
+//   <video width="400" controls>
+//   <source src="mov_bbb.mp4" type="video/mp4">
+//   <source src="mov_bbb.ogg" type="video/ogg">
+//   Your browser does not support HTML5 video.
+// </video>
 
   componentDidMount(){
     this.init()
+    console.log('called init')
   }
 
   genreFilter = (obj) => {
@@ -118,18 +122,21 @@ export default class Movie extends Component {
       this.setState({n: (this.state.n + 1)})
     }
   }
-  
-  changeData = (id) => {
-    this.setState({track:(this.state.track+1)})
-    console.log(this.state.track, id)
+
+
+  updateData = (id) => {
+    this.setState({changeData: true},()=>{
+      this.init()
+      console.log(this.state.changeData)
+    })
   }
 
   similarGenreDisplay = (n) => {
     return(
       this.state.similarMovies.slice(n,n+6).map((item, i) => {
         return (
-          <div className="movie-card" key={i} onClick={this.changeData.bind(null,item.id)} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}}>
-            <Link to={`/movie/${item.id}`} ></Link>
+          <div className="movie-card" key={i} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}}>
+            <Link to={`/movie/${item.id}`} onClick={this.updateData.bind(this,item.id)}></Link>
             <div className="number-rating">
               <i className="fas fa-star"></i>
               <p className="rating">{item.vote_average}</p>

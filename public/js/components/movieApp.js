@@ -162,92 +162,58 @@ var Header = function (_Component) {
         { className: 'container footer-wrap' },
         _react2.default.createElement(
           'div',
-          { className: 'footer' },
+          { className: 'info' },
           _react2.default.createElement(
             'div',
             { className: 'contact' },
             _react2.default.createElement(
-              'h4',
-              null,
-              'Have questions?'
+              _reactRouterDom.Link,
+              { to: '/' },
+              'About'
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'phone' },
-              _react2.default.createElement('i', { className: 'fas fa-phone' }),
-              _react2.default.createElement(
-                'p',
-                { className: 'number' },
-                '+555-647-5555'
-              )
+              _reactRouterDom.Link,
+              { to: '/' },
+              'Jobs'
             ),
             _react2.default.createElement(
-              'p',
-              null,
-              'support@gmail.com'
+              _reactRouterDom.Link,
+              { to: '/' },
+              'Help'
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'address' },
-            _react2.default.createElement('i', { className: 'fas fa-map-marker-alt' }),
+            { className: 'desc' },
             _react2.default.createElement(
-              'p',
-              null,
-              '18th Banana street | suite 400 ',
-              _react2.default.createElement(
-                'span',
-                null,
-                'Narnia, Mo 83028'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'social-row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'icon-wrap' },
-              _react2.default.createElement(
-                'a',
-                { href: '#' },
-                _react2.default.createElement('i', { className: 'fab fa-twitter' })
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: '#' },
-                _react2.default.createElement('i', { className: 'fab fa-facebook-square' })
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: '#' },
-                _react2.default.createElement('i', { className: 'fab fa-pinterest-p' })
-              ),
-              _react2.default.createElement(
-                'a',
-                { href: '#' },
-                _react2.default.createElement('i', { className: 'fab fa-instagram' })
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'copyright' },
-            _react2.default.createElement(
-              'p',
-              { className: 'icon' },
-              '\u24B8'
+              _reactRouterDom.Link,
+              { to: '/' },
+              'About ads'
             ),
             _react2.default.createElement(
-              'p',
-              { className: 'text' },
-              '2018 the reel. ',
-              _react2.default.createElement(
-                'span',
-                null,
-                'all rights reserved.'
-              )
+              _reactRouterDom.Link,
+              { to: '/' },
+              'terms of use'
+            ),
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/' },
+              'privacy policy'
             )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'copyright' },
+          _react2.default.createElement(
+            'p',
+            { className: 'icon' },
+            '\u24B8'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'brand' },
+            '2018 the reel'
           )
         )
       );
@@ -311,6 +277,8 @@ var Header = function (_Component) {
     };
     return _this;
   }
+  // <button type="submit" className={'btn'}>
+
 
   _createClass(Header, [{
     key: 'componentDidMount',
@@ -337,17 +305,10 @@ var Header = function (_Component) {
             _react2.default.createElement(
               _reactRouterDom.Link,
               { to: '/', className: 'logo' },
-              _react2.default.createElement('div', { className: 'cover' }),
-              _react2.default.createElement('img', { src: './img/icon.png' }),
               _react2.default.createElement(
                 'p',
                 { className: 'title' },
-                'The ',
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Reel'
-                )
+                'The Reel'
               )
             ),
             _react2.default.createElement(
@@ -372,12 +333,13 @@ var Header = function (_Component) {
                     'div',
                     { className: 'browse-dropdown', onMouseOver: this.displayDropdown },
                     'Browse',
-                    _react2.default.createElement('i', { id: 'angle-down', className: 'fas fa-angle-down' })
+                    _react2.default.createElement('i', { id: 'angle-down', className: 'fas fa-caret-down' })
                   )
                 ),
                 _react2.default.createElement(
                   'div',
-                  { id: 'browser-box' },
+                  { className: 'dropbox-1' },
+                  _react2.default.createElement('i', { className: 'fas fa-caret-up' }),
                   _react2.default.createElement(
                     'ul',
                     null,
@@ -437,12 +399,7 @@ var Header = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'form' },
-              _react2.default.createElement('input', { type: 'text', className: 'search', placeholder: 'Search...' }),
-              _react2.default.createElement(
-                'button',
-                { type: 'submit', className: 'btn' },
-                _react2.default.createElement('i', { className: 'fa fa-search' })
-              )
+              _react2.default.createElement('input', { type: 'text', className: 'search', placeholder: 'movies, titles, people...' })
             ),
             _react2.default.createElement(
               'div',
@@ -453,14 +410,80 @@ var Header = function (_Component) {
                 { className: 'notification' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'counter' },
+                  { className: 'bell-wrapper' },
                   _react2.default.createElement(
-                    'p',
-                    { className: 'number' },
-                    '2'
-                  )
+                    'div',
+                    { className: 'counter' },
+                    _react2.default.createElement(
+                      'p',
+                      { className: 'number' },
+                      '2'
+                    )
+                  ),
+                  _react2.default.createElement('i', { className: 'fas fa-bell' })
                 ),
-                _react2.default.createElement('i', { className: 'fas fa-bell' })
+                _react2.default.createElement(
+                  'div',
+                  { className: 'dropbox-2' },
+                  _react2.default.createElement('i', { className: 'fas fa-caret-up' }),
+                  _react2.default.createElement(
+                    'ul',
+                    { id: 'list' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'mail' },
+                        _react2.default.createElement('img', { src: 'https://pbs.twimg.com/profile_images/625040399535636480/isqG9o0c_400x400.jpg' }),
+                        _react2.default.createElement(
+                          _reactRouterDom.Link,
+                          { to: '/' },
+                          _react2.default.createElement(
+                            'span',
+                            null,
+                            'Hassan Wohmit'
+                          ),
+                          ' found your review helpful on ',
+                          _react2.default.createElement(
+                            'span',
+                            { className: 'movie-title' },
+                            'James and the Giant Peach'
+                          ),
+                          '.'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'mail' },
+                        _react2.default.createElement('img', { src: 'https://www.theaudiodb.com/images/media/artist/thumb/uvqtus1372530587.jpg' }),
+                        _react2.default.createElement(
+                          _reactRouterDom.Link,
+                          { to: '/' },
+                          _react2.default.createElement(
+                            'span',
+                            null,
+                            'Sheva Bower'
+                          ),
+                          ' sent you a movie request.'
+                        )
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'extra-links' },
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      { to: '/' },
+                      'View all'
+                    )
+                  )
+                )
               ),
               _react2.default.createElement(
                 'div',
@@ -472,7 +495,8 @@ var Header = function (_Component) {
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'user-box' },
+                  { className: 'dropbox-3' },
+                  _react2.default.createElement('i', { className: 'fas fa-caret-up' }),
                   _react2.default.createElement(
                     'ul',
                     { id: 'user-list' },
@@ -709,19 +733,167 @@ var Listings = function (_Component) {
       console.log(e.target.id);
     };
 
+    _this.openPlaylist = function (itemID) {
+      var box = document.getElementsByClassName('playlist ' + itemID);
+      console.log(itemID, "opening");
+      console.log(box);
+      // box[0].style.backgroundColor = "blue"
+      box[0].classList.add('showList');
+      if (box[0].classList.contains("hideList")) {
+        box[0].classList.remove('hideList');
+        box[0].classList.add('showList');
+      }
+    };
+
+    _this.closePlaylist = function (itemID) {
+      var box = document.getElementsByClassName('playlist ' + itemID);
+      console.log(itemID, "closing");
+      console.log(box);
+      // box.style.visibility = "hidden"
+      if (box[0].classList.contains("showList")) {
+        box[0].classList.remove('showList');
+        box[0].classList.add('hideList');
+      }
+    };
+
     _this.showMovies = function () {
       var imgURL = 'http://image.tmdb.org/t/p/original';
       if (_this.state.movieList) {
         return _this.state.movieList.slice(0, 12).reverse().map(function (item, i) {
-          return _react2.default.createElement(
-            'div',
-            { className: 'movie-card', onClick: _this.cardHandler, key: i },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: '/movie/' + item.id },
-              _react2.default.createElement('img', { id: '' + item.id, src: '' + imgURL + item.poster_path })
-            )
-          );
+          if (2 < 3) {
+            console.log(item);
+            return _react2.default.createElement(
+              'div',
+              { className: 'movie-card', onClick: _this.cardHandler, key: i },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/movie/' + item.id },
+                _react2.default.createElement('img', { id: '' + item.id, src: '' + imgURL + item.poster_path })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'small-details' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'text' },
+                  _react2.default.createElement(
+                    'p',
+                    { id: 'rating' },
+                    item.vote_average
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    { id: 'title' },
+                    item.original_title
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'save' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'wrap a' },
+                    _react2.default.createElement('i', { className: 'fas fa-plus', onClick: _this.openPlaylist.bind(null, item.id) })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'playlist ' + item.id, id: item.id },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'close-btn', onClick: _this.closePlaylist.bind(null, item.id) },
+                      _react2.default.createElement('i', { className: 'fas fa-times-circle' })
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'button' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'wrap b' },
+                        _react2.default.createElement('i', { className: 'fas fa-plus' }),
+                        _react2.default.createElement('i', { className: 'fas fa-list-ul' })
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'create-btn' },
+                        'create new playlist'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'lists' },
+                      _react2.default.createElement(
+                        'ul',
+                        null,
+                        _react2.default.createElement(
+                          'li',
+                          null,
+                          'watch later'
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          null,
+                          'horror classics'
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          null,
+                          'kids'
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            );
+          } else {
+            return _react2.default.createElement(
+              'div',
+              { className: 'movie-card', onClick: _this.cardHandler, key: i, style: { backgroundImage: 'url(' + imgURL + item.backdrop_path + ')' } },
+              _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id }),
+              _react2.default.createElement(
+                'div',
+                { className: 'detail' },
+                _react2.default.createElement(
+                  'p',
+                  { id: 'category' },
+                  'most popular Fiction feature films'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { id: 'name' },
+                  'item.name'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'small-detail' },
+                  _react2.default.createElement(
+                    'p',
+                    { id: 'rating' },
+                    '7.5'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'genres' },
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Action'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Suspense'
+                    ),
+                    _react2.default.createElement(
+                      'p',
+                      null,
+                      'Thriller'
+                    )
+                  )
+                )
+              )
+            );
+          }
         });
       } else {}
     };
@@ -924,17 +1096,19 @@ var Movie = function (_Component) {
       }
     };
 
-    _this.changeData = function (id) {
-      _this.setState({ track: _this.state.track + 1 });
-      console.log(_this.state.track, id);
+    _this.updateData = function (id) {
+      _this.setState({ changeData: true }, function () {
+        _this.init();
+        console.log(_this.state.changeData);
+      });
     };
 
     _this.similarGenreDisplay = function (n) {
       return _this.state.similarMovies.slice(n, n + 6).map(function (item, i) {
         return _react2.default.createElement(
           'div',
-          { className: 'movie-card', key: i, onClick: _this.changeData.bind(null, item.id), style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
-          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id }),
+          { className: 'movie-card', key: i, style: { backgroundImage: 'url(' + apiImageURL + item.poster_path + ')' } },
+          _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id, onClick: _this.updateData.bind(_this, item.id) }),
           _react2.default.createElement(
             'div',
             { className: 'number-rating' },
@@ -1060,7 +1234,8 @@ var Movie = function (_Component) {
       actorsImageList: [],
       similarMovies: [],
       newRoute: '',
-      track: 0
+      n: 0,
+      changeData: false
     };
     return _this;
   }
@@ -1068,19 +1243,23 @@ var Movie = function (_Component) {
   _createClass(Movie, [{
     key: 'componenShouldUpdate',
     value: function componenShouldUpdate(nextProps) {
-      console.log('calling function');
+      console.log('calling');
       console.log(nextProps);
       console.log(this.props);
     }
   }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      // onClick={this.init}
-    }
-  }, {
     key: 'componentDidMount',
+
+
+    //   <video width="400" controls>
+    //   <source src="mov_bbb.mp4" type="video/mp4">
+    //   <source src="mov_bbb.ogg" type="video/ogg">
+    //   Your browser does not support HTML5 video.
+    // </video>
+
     value: function componentDidMount() {
       this.init();
+      console.log('called init');
     }
   }, {
     key: 'render',
@@ -1476,7 +1655,8 @@ var Slider = function (_Component) {
             { href: "#", className: "arrows right-arrow", onClick: this.nextBtn },
             _react2.default.createElement("i", { className: "fas fa-caret-right" })
           ),
-          _react2.default.createElement("div", { className: "image-1", style: this.state.movieList ? { backgroundImage: "linear-gradient(rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%, rgba(0,0,0,0) 0%), url(" + this.state.wholePath + ") " } : { backgroundImage: "url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)" } }),
+          _react2.default.createElement("div", { className: "filter" }),
+          _react2.default.createElement("div", { className: "image-1", style: this.state.movieList ? { backgroundImage: "linear-gradient(rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 30%, rgba(0,0,0,0) 0%), url(" + this.state.wholePath + ") " } : { backgroundImage: "url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)" } }),
           _react2.default.createElement(
             "div",
             { className: "details" },

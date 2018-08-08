@@ -107,16 +107,17 @@ export default class Slider extends Component {
     return (
       <div className="slider">
         <div className="main-image">
+
           <div href="#" className="arrows left-arrow" onClick={this.prevBtn}>
               <i className="fas fa-caret-left"></i>
           </div>
           <div href="#" className="arrows right-arrow" onClick={this.nextBtn}>
               <i className="fas fa-caret-right"></i>
           </div>
+          <div className="filter"></div>
           <div className="image-1" style={
-            this.state.movieList ? { backgroundImage: `linear-gradient(rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%, rgba(0,0,0,0) 0%), url(${this.state.wholePath}) ` } : { backgroundImage: `url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)` }
-          }>
-          </div>
+            this.state.movieList ? { backgroundImage: `linear-gradient(rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 30%, rgba(0,0,0,0) 0%), url(${this.state.wholePath}) ` } : { backgroundImage: `url(https://image.tmdb.org/t/p/original/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg)` }
+          }></div>
           <div className="details">
 
             <h1 className="title">{this.state.title}</h1>
