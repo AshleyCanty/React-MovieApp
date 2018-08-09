@@ -3,4 +3,4 @@
 ****************************************************************************
 <br/>
 <br/>
-<b>Check it out the live demo <a href="https://the-reel.herokuapp.com/" >here</a></b>
+<b>Check out the live demo <a href="https://the-reel.herokuapp.com/" >here</a></b>
