@@ -735,8 +735,6 @@ var Listings = function (_Component) {
 
     _this.openPlaylist = function (itemID) {
       var box = document.getElementsByClassName('playlist ' + itemID);
-      console.log(itemID, "opening");
-      console.log(box);
       // box[0].style.backgroundColor = "blue"
       box[0].classList.add('showList');
       if (box[0].classList.contains("hideList")) {
@@ -747,8 +745,6 @@ var Listings = function (_Component) {
 
     _this.closePlaylist = function (itemID) {
       var box = document.getElementsByClassName('playlist ' + itemID);
-      console.log(itemID, "closing");
-      console.log(box);
       // box.style.visibility = "hidden"
       if (box[0].classList.contains("showList")) {
         box[0].classList.remove('showList');
@@ -759,9 +755,9 @@ var Listings = function (_Component) {
     _this.showMovies = function () {
       var imgURL = 'http://image.tmdb.org/t/p/original';
       if (_this.state.movieList) {
-        return _this.state.movieList.slice(0, 12).reverse().map(function (item, i) {
-          if (2 < 3) {
-            console.log(item);
+        return _this.state.movieList.slice(0, 14).reverse().map(function (item, i) {
+          console.log(item);
+          if (item.original_language == 'en') {
             return _react2.default.createElement(
               'div',
               { className: 'movie-card', onClick: _this.cardHandler, key: i },
@@ -840,54 +836,6 @@ var Listings = function (_Component) {
                           'kids'
                         )
                       )
-                    )
-                  )
-                )
-              )
-            );
-          } else {
-            return _react2.default.createElement(
-              'div',
-              { className: 'movie-card', onClick: _this.cardHandler, key: i, style: { backgroundImage: 'url(' + imgURL + item.backdrop_path + ')' } },
-              _react2.default.createElement(_reactRouterDom.Link, { to: '/movie/' + item.id }),
-              _react2.default.createElement(
-                'div',
-                { className: 'detail' },
-                _react2.default.createElement(
-                  'p',
-                  { id: 'category' },
-                  'most popular Fiction feature films'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { id: 'name' },
-                  'item.name'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'small-detail' },
-                  _react2.default.createElement(
-                    'p',
-                    { id: 'rating' },
-                    '7.5'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'genres' },
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Action'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Suspense'
-                    ),
-                    _react2.default.createElement(
-                      'p',
-                      null,
-                      'Thriller'
                     )
                   )
                 )
@@ -1594,7 +1542,6 @@ var Slider = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log(this.props);
       _axios2.default.get('/api/genres').then(function (response) {
         var allGenres = response.data;
         _this2.setState({ allGenres: allGenres });
@@ -1608,6 +1555,7 @@ var Slider = function (_Component) {
           currentGenres: _this2.genreFilter(movieList[_this2.state.currentIndex]),
           title: movieList[_this2.state.currentIndex].title,
           overview: movieList[_this2.state.currentIndex].overview,
+          shortOverview: _this2.state.overview,
           releaseDate: movieList[_this2.state.currentIndex].release_date
         });
       });
@@ -1624,6 +1572,14 @@ var Slider = function (_Component) {
       var overview = this.state.movieList[this.state.currentIndex].overview;
       var id = this.state.movieList[this.state.currentIndex].id;
       var releaseDate = this.state.movieList[this.state.currentIndex].release_date;
+      var shortOverview = this.state.overview;
+
+      if (overview.length > 250) {
+        shortOverview = overview.substr(0, 250) + "...";
+        console.log(shortOverview);
+        // $(this).parent().append("<a href='#'>Read More</a>");
+      }
+
       if (wholePath === prevState.wholePath) {
         var path = currentMovie.backdrop_path;
         this.setState({
@@ -1631,6 +1587,7 @@ var Slider = function (_Component) {
           wholePath: apiImageURL + path,
           title: title,
           overview: overview,
+          shortOverview: shortOverview,
           id: id,
           releaseDate: releaseDate
         });
@@ -1668,7 +1625,12 @@ var Slider = function (_Component) {
             _react2.default.createElement(
               "p",
               { className: "overview" },
-              this.state.overview
+              this.state.shortOverview,
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: "/movie/" + this.state.id },
+                "Read More"
+              )
             ),
             _react2.default.createElement(
               "div",

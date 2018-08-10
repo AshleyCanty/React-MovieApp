@@ -31,8 +31,6 @@ export default class Listings extends Component {
 
   openPlaylist = (itemID) => {
     let box = document.getElementsByClassName('playlist ' + itemID);
-    console.log(itemID, "opening")
-    console.log(box)
     // box[0].style.backgroundColor = "blue"
     box[0].classList.add('showList')
     if(box[0].classList.contains("hideList")){
@@ -42,8 +40,6 @@ export default class Listings extends Component {
   }
   closePlaylist = (itemID) => {
     let box = document.getElementsByClassName('playlist ' + itemID);
-    console.log(itemID, "closing")
-    console.log(box)
     // box.style.visibility = "hidden"
     if(box[0].classList.contains("showList")){
       box[0].classList.remove('showList')
@@ -54,9 +50,9 @@ export default class Listings extends Component {
   showMovies = () => {
     const imgURL = 'http://image.tmdb.org/t/p/original'
     if (this.state.movieList) {
-      return (this.state.movieList.slice(0,12).reverse().map((item, i) => {
-        if(2 < 3){
-          console.log(item)
+      return (this.state.movieList.slice(0,14).reverse().map((item, i) => {
+        console.log(item)
+        if(item.original_language == 'en'){
           return (
             <div className="movie-card" onClick={this.cardHandler} key={i}>
               <Link to={`/movie/${item.id}`}><img id={`${item.id}`} src={`${imgURL}${item.poster_path}`} /></Link>
@@ -87,25 +83,6 @@ export default class Listings extends Component {
                         <li>kids</li>
                       </ul>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )
-        } else {
-          return (
-            <div className="movie-card" onClick={this.cardHandler} key={i} style={{backgroundImage: `url(${imgURL}${item.backdrop_path})`}}>
-              <Link to={`/movie/${item.id}`}>
-              </Link>
-              <div className="detail">
-                <p id="category">most popular Fiction feature films</p>
-                <p id="name">item.name</p>
-                <div className="small-detail">
-                  <p id="rating">7.5</p>
-                  <div className="genres">
-                    <p>Action</p>
-                    <p>Suspense</p>
-                    <p>Thriller</p>
                   </div>
                 </div>
               </div>

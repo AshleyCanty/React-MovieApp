@@ -11,10 +11,25 @@
     background-color: #f5f6f7;
     margin: 0 auto;
     width: 100%;
-    padding: 20px 10px;
+    padding: 20px 0px;
+    display: flex;
 
     .movie-card{
+      transition: all .2s ease-out;
+      &:hover{
+        background: #404040;
+        border-radius: 8px;
+        .text{
+          color: #fff;
+        }
+        .fas.fa-plus{
+          &:hover{
+            color: #fff !important;
+          }
+        }
+      }
       img{
+        transition: all .3s ease-out;
         box-shadow: 1px 5px 16px 1px rgba(0,0,0,.4);
         border-radius: 8px;
         &:hover{
@@ -23,6 +38,7 @@
       }
       .small-details{
         display: flex;
+        // display: none;
         font-weight: 500;
         padding: 8px 5px 10px;
         align-items: center;
@@ -76,11 +92,12 @@
             }
           }
           .playlist{
-            visibility: hidden;
+            // visibility: hidden;
+            display: none;
             opacity: .5;
             margin-left: 30px;
             position: absolute;
-            width: 200px;
+            width: 240px;
             background: #fff;
             border-radius: 8px;
             text-align: left;
@@ -101,18 +118,22 @@
               }
               .fa-times-circle{
                 color: #434343;
-                font-size: 1rem;
+                font-size: 1.2rem;
                 line-height: 15px;
+                transform: translate(-3%,-1%);
               }
             }
 
             .button{
+              padding: 5px 0;
               display: flex;
               justify-content: baseline;
               align-items: center;
               background: #9768a8;
+              border-radius: 8px 0 0 0;
               .create-btn{
                 color: #fff;
+                font-size: 1.1rem;
               }
               .wrap.b{
                 padding: 8px;
@@ -140,10 +161,11 @@
 
             .lists{
               ul {
+                font-size: 1.1rem;
                 padding-top: 5px;
                 width: 100%;
                 li{
-                  padding: 8px 14px;
+                  padding: 14px;
                   color: #8a838e;
                   &:hover{
                     background: #ededed;
@@ -191,57 +213,22 @@
   .listings-page {
     .container {
       max-width: 1800px;
-      // display: grid;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      display: grid;
+      width: 90%;
       justify-content: center;
-      // grid-gap: 8px;
-      // grid-template-columns: repeat(3, 1fr);
-      // grid-template-rows: auto auto auto auto;
-      // grid-template-areas:
-      //   "a b c"
-      //   "d e f"
-      //   "g h i"
-      //   "j k l";
-      //   align-items: start;
+      grid-gap: 15px;
+      grid-template-columns: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+
       .movie-card {
-        margin: 0 8px;
-        max-width: 22%;
+        width: 280px;
         background-position: center;
         background-size: cover;
-        margin-bottom: 20px;
 
         img {
           width: 100%;
           display: block;
           margin:0 auto;
-        }
-        &:nth-child(1){
-          grid-area: a;
-        }
-        &:nth-child(2){
-          grid-area: b;
-        }
-        &:nth-child(3){
-          grid-area: c;
-        }
-        &:nth-child(4){
-          // max-width: 100%;
-          // grid-area: d;
-          // background-position: center;
-          // background-size: cover;
-          // // min-height: 325px;
-          // height: 475px;
-        }
-        &:nth-child(5){
-          grid-area: e;
-        }
-        &:nth-child(6){
-          grid-area: f;
-        }
-        &:nth-child(7){
-          grid-area: g;
         }
       }
     }
@@ -250,13 +237,15 @@
 
 .showList{
   // display: block;
-  visibility: visible !important;
+  // visibility: visible !important;
+  display: block !important;
   opacity: 1 !important;
   transform: translateX(0%) !important;
 }
 .hideList{
   // display: block;
-  visibility: hidden !important;
+  // visibility: hidden !important;
+  display: none !important;
   opacity: 0 !important;
   transform: translateX(120%) !important;
 }

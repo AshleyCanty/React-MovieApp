@@ -19,7 +19,6 @@ export default class Slider extends Component {
   }
 
   componentDidMount(){
-    console.log(this.props)
     axios.get('/api/genres').then(response => {
       let allGenres = response.data
       this.setState({allGenres})
@@ -31,6 +30,7 @@ export default class Slider extends Component {
         currentGenres: this.genreFilter(movieList[this.state.currentIndex]),
         title: movieList[this.state.currentIndex].title,
         overview: movieList[this.state.currentIndex].overview,
+        shortOverview: this.state.overview,
         releaseDate: movieList[this.state.currentIndex].release_date
       })
     })
@@ -47,6 +47,13 @@ export default class Slider extends Component {
     const overview = this.state.movieList[this.state.currentIndex].overview
     const id = this.state.movieList[this.state.currentIndex].id
     const releaseDate = this.state.movieList[this.state.currentIndex].release_date
+    let shortOverview = this.state.overview
+
+    if(overview.length > 250){
+      shortOverview = overview.substr(0, 250) + "...";
+      // $(this).parent().append("<a href='#'>Read More</a>");
+    }
+
     if(wholePath === prevState.wholePath){
       let path = currentMovie.backdrop_path
       this.setState({
@@ -54,6 +61,7 @@ export default class Slider extends Component {
         wholePath: apiImageURL + path,
         title,
         overview,
+        shortOverview,
         id,
         releaseDate
       })
@@ -121,7 +129,7 @@ export default class Slider extends Component {
           <div className="details">
 
             <h1 className="title">{this.state.title}</h1>
-            <p className="overview">{this.state.overview}</p>
+            <p className="overview">{this.state.shortOverview}<Link to={`/movie/${this.state.id}`}>Read More</Link></p>
             <div className="genres">
               {this.genreDisplay()}
             </div>
