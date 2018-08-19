@@ -17,6 +17,8 @@ export default class Header extends Component {
     render () {
       return (
         <div className="container footer-wrap">
+<<<<<<< HEAD
+=======
           <div className="info">
             <div className="contact">
               <Link to="/">About</Link>
@@ -29,6 +31,7 @@ export default class Header extends Component {
               <Link to="/">privacy policy</Link>
             </div>
           </div>
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
           <div className="copyright">
             <p className="icon">&#9400;</p>
             <p className="brand">2018 the reel</p>

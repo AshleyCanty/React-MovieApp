@@ -1,10 +1,69 @@
 .listings-page{
+<<<<<<< HEAD
+  background: #1b102d;
+=======
   background: #f5f6f7;
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
   padding-bottom: 30px;
   // "j j k k l l"
   // "m m k k l l"
 
   .top-text{
+<<<<<<< HEAD
+    padding: 130px 20px 0px;
+    display: flex;
+    margin-left: 320px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    h4{
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    a{
+      padding: 12px 15px;
+      background: #777777;
+      border-radius: 2px;
+      text-transform: capitalize;
+      text-decoration: none;
+      font-size: 1rem;
+      color: #fff;
+
+      &:hover{
+        .fas{
+          transform: translateX(5px);
+        }
+      }
+
+      .fas {
+        transition: all .3s ease-in-out;
+        margin-left: 10px;
+      }
+    }
+  }
+  .container{
+    background: #1b102d;
+    margin: 0 auto;
+    width: calc(100% - 320px);
+    padding: 70px 0 0;
+    margin-left: 320px;
+    display: flex;
+
+    .movie-card{
+      transition: all .2s ease-out;
+      &:hover{
+        // background: #404040;
+        border-radius: 8px;
+        .text{
+          color: #fff;
+        }
+      }
+      img{
+        transition: all .3s ease-out;
+        box-shadow: 1px 5px 16px 1px rgba(0,0,0,.4);
+        border-radius: 8px;
+=======
     display: none;
   }
   .container{
@@ -32,19 +91,27 @@
         transition: all .3s ease-out;
         box-shadow: 1px 5px 16px 1px rgba(0,0,0,.4);
         border-radius: 8px;
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
         &:hover{
           cursor: pointer;
         }
       }
       .small-details{
+<<<<<<< HEAD
+        color: white;
+=======
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
         display: flex;
         // display: none;
         font-weight: 500;
         padding: 8px 5px 10px;
         align-items: center;
         justify-content: space-between;
+<<<<<<< HEAD
+=======
         color: #1e1521;
         color: #282828;
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
 
         .text{
           display: flex;
@@ -214,7 +281,10 @@
     .container {
       max-width: 1800px;
       display: grid;
+<<<<<<< HEAD
+=======
       width: 90%;
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
       justify-content: center;
       grid-gap: 15px;
       grid-template-columns: auto auto auto auto;

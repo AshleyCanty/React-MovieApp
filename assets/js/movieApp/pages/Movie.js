@@ -66,7 +66,11 @@ export default class Movie extends Component {
 
       this.setState({credits})
       if(response.data.cast != null && response.data.cast !=  undefined){
+<<<<<<< HEAD
+        actors = response.data.cast.slice(0,6)
+=======
         actors = response.data.cast.slice(0,5)
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
         if (actors != null && actors != undefined){
           this.setState({actors})
           this.getCastInfo()
@@ -93,7 +97,10 @@ export default class Movie extends Component {
 
   componentDidMount(){
     this.init()
+<<<<<<< HEAD
+=======
     console.log('called init')
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
   }
 
   genreFilter = (obj) => {
@@ -130,13 +137,33 @@ export default class Movie extends Component {
       console.log(this.state.changeData)
     })
   }
+<<<<<<< HEAD
+  movieHoverOn = () => {
+    let filter = document.getElementById('filter')
+
+    // if(filter.classList.contains('is_hover')){
+    //   filter.classList.remove('is_hover')
+    // } else {
+    //   filter.classList.add('is_hover')
+    // }
+  }
+=======
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
 
   similarGenreDisplay = (n) => {
     return(
       this.state.similarMovies.slice(n,n+6).map((item, i) => {
         return (
+<<<<<<< HEAD
+          <div className="movie-card" key={i} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}} onMouseEnter={this.movieHoverOn} onMouseLeave={this.movieHoverOff}>
+            <Link to={`/movie/${item.id}`} onClick={this.updateData.bind(this,item.id)}></Link>
+            <div id="filter">
+              <i className="far fa-play-circle"></i>
+            </div>
+=======
           <div className="movie-card" key={i} style={{backgroundImage: `url(${apiImageURL}${item.poster_path})`}}>
             <Link to={`/movie/${item.id}`} onClick={this.updateData.bind(this,item.id)}></Link>
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
             <div className="number-rating">
               <i className="fas fa-star"></i>
               <p className="rating">{item.vote_average}</p>
@@ -167,8 +194,17 @@ export default class Movie extends Component {
 
   genreDisplay = () => {
     if(this.state.currentGenres){
+<<<<<<< HEAD
+      return (this.state.currentGenres.slice(0,3).map((item, i) => {
+        if(i != 2){
+          return (<p className="genre" key={i}>{item[0].name}.</p>)
+        } else {
+          return (<p className="genre" key={i}>{item[0].name}</p>)
+        }
+=======
       return (this.state.currentGenres.map((item, i) => {
         return (<p className="genre" key={i}>{item[0].name}</p>)
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
       }))
     }
   }
@@ -239,12 +275,31 @@ castDisplay = () => {
   )
 }
 
+<<<<<<< HEAD
+liked = () => {
+  let heart = document.getElementById('heart')
+
+  if(heart.classList.contains('is_animating')){
+    heart.classList.remove('is_animating')
+    heart.style.backgroundPosition = 'left'
+  } else {
+    heart.classList.add('is_animating')
+    heart.style.backgroundPosition = 'right'
+  }
+}
+=======
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
 
 
   render () {
     return (
       <div className="movie">
+<<<<<<< HEAD
+      <div className="testBlock"></div>
+        <div className="container" style={{backgroundImage: `linear-gradient(rgba(27,15,45,.9) 100%, rgba(27,15,45,.9) 100%), url(${this.state.movieBackdrop})`}}>
+=======
         <div className="container" style={{backgroundImage: `linear-gradient(rgba(27,15,45,.85) 100%, rgba(27,15,45,.85) 100%), url(${this.state.movieBackdrop})`}}>
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
           <div className="filter-1"></div>
           <div className="filter-2"></div>
           <div className="wrapper" >
@@ -277,9 +332,13 @@ castDisplay = () => {
                         <div className="watch-btn">Watch now</div>
                         <div className="trailer-btn">trailer</div>
                       </div>
+<<<<<<< HEAD
+                      <div id="heart" className="heart-animation" onClick={this.liked} onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}></div>
+=======
                       <div className="like-btn">
                         <i className="far fa-heart"></i>
                       </div>
+>>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
                     </div>
                   </div>
                 </div>

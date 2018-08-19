@@ -1,0 +1,134 @@
+.slide {
+  transform: translateX(0%) !important;
+}
+
+#sidebar{
+  position: fixed;
+  z-index: 50000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #271542;
+  height: 100%;
+  width: 320px;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  .sidebar-btn{
+    background: #1b102d;
+    position: absolute;
+    top: 50%;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    z-index: -2000;
+    .fas.fa-chevron-right{
+      color: #321f56;
+      font-size: 36px;
+      position: absolute;
+      line-height: 55px;
+      left: 52%;
+      transition: color .3s ease-in-out;
+    }
+  }
+
+  #wrapper {
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+
+    &::-webkit-scrollbar{
+      width: 6px;
+      background-color: rgba(0,0,0,.0);
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background-color: #1b102d;
+      background-color: #100a1c;
+    }
+
+    .logo{
+      padding-top: 43px;
+      padding-bottom: 100px;
+      // transform: translateY(4%);
+      display: flex;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none;
+      &:hover{
+        cursor: pointer;
+      }
+      img{
+        border-radius: 50%;
+        width: 104px;
+      }
+      .title{
+        letter-spacing: 3px;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        text-transform: capitalize;
+        font-size: 1.7rem;
+        font-weight: 900;
+        padding: 0 10px;
+
+      }
+      .img-logo{
+        max-width: 80px;
+        max-height: 97px;
+      }
+    }
+    .top-menu{
+      background: #271542;
+      width: 100%;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 3000;
+      h5{
+        color: #786b7c;
+      }
+      ul{
+        height: fit-content;
+        width: 100%;
+        li{
+          margin: 14px 0;
+          color: white;
+          border-left: 3px solid #271542;
+          transition: all .1s ease-in;
+          &:hover{
+            cursor: pointer;
+            color: $purpleDark;
+            border-left: 3px solid $purpleDark;
+          }
+        }
+      }
+    }
+    .bottom-menu{
+      background: #271542;
+      position: relative;
+      z-index: 3000;
+      padding-top: 80px;
+      width: 100%;
+      h5{
+        // margin-top: 80px;
+        text-transform: uppercase;
+        color: #786b7c;
+      }
+      ul{
+        width: 100%;
+        li{
+          text-transform: capitalize;
+          margin: 14px 0;
+          color: #b7babc;
+          border-left: 3px solid #271542;
+          transition: all .1s ease-in;
+          &:hover{
+            cursor: pointer;
+            color: white;
+            border-left: 3px solid $purpleDark;
+          }
+        }
+      }
+    }
+  }
+}
