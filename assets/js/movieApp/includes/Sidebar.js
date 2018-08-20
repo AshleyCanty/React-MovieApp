@@ -6,12 +6,7 @@ export default class Header extends Component {
   constructor () {
     super()
     this.state = {
-
     }
-  }
-// <button type="submit" className={'btn'}>
-  componentDidMount(){
-
   }
 
   clicked = () => {

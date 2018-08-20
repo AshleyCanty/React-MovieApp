@@ -12,7 +12,6 @@ export default class Header extends Component {
       userData: ''
     }
   }
-// <button type="submit" className={'btn'}>
   componentDidMount(){
     const header = document.getElementById('header')
     const logo = document.getElementById('logo')
@@ -22,7 +21,6 @@ export default class Header extends Component {
     })
   }
 
-<<<<<<< HEAD
   topNav = () => {
     let nav = document.getElementById('dropmenu')
 
@@ -44,14 +42,11 @@ export default class Header extends Component {
       submenu.classList.add('showMenu')
     }
   }
-=======
->>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
 
     render () {
       return (
         <div id="header" className="container header-wrap">
           <header>
-<<<<<<< HEAD
             <Link to="/"><img src="/img/free.png" className="logo-img"/></Link>
             <div className="responsive-menu">
               <i className="fas fa-bars" onClick={this.topNav}></i>
@@ -72,35 +67,6 @@ export default class Header extends Component {
                   <li className="main-links"><Link to="#">Notifications</Link></li>
                 </ul>
               </div>
-=======
-
-            <div className={'leftMenu'}>
-              <Link to="/" className={'logo'}>
-                <p className={'title'}>The Reel</p>
-              </Link>
-              <ul>
-                <li>
-                  <NavLink to="/" activeClassName="active">Home</NavLink>
-                </li>
-                <li>
-                  <Link to="">
-                    <div className={'browse-dropdown'} onMouseOver={this.displayDropdown}>Browse
-                      <i id="angle-down" className={'fas fa-caret-down'}></i>
-                    </div>
-                  </Link>
-                  <div className="dropbox-1">
-                  <i className="fas fa-caret-up"></i>
-                    <ul>
-                      <li><Link to="/">action</Link></li>
-                      <li><Link to="/">adventure</Link></li>
-                      <li><Link to="/">horror</Link></li>
-                      <li><Link to="/">comedy</Link></li>
-                      <li><Link to="/">fantasy</Link></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
->>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
             </div>
             <div className={'rightMenu'}>
               <div className={'form'}>

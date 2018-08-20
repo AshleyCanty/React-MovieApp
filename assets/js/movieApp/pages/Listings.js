@@ -47,32 +47,10 @@ export default class Listings extends Component {
     }
   }
 
-  openPlaylist = (itemID) => {
-    let box = document.getElementsByClassName('playlist ' + itemID);
-    // box[0].style.backgroundColor = "blue"
-    box[0].classList.add('showList')
-    if(box[0].classList.contains("hideList")){
-      box[0].classList.remove('hideList')
-      box[0].classList.add('showList')
-    }
-  }
-  closePlaylist = (itemID) => {
-    let box = document.getElementsByClassName('playlist ' + itemID);
-    // box.style.visibility = "hidden"
-    if(box[0].classList.contains("showList")){
-      box[0].classList.remove('showList')
-      box[0].classList.add('hideList')
-    }
-  }
-
   showMovies = () => {
     const imgURL = 'http://image.tmdb.org/t/p/original'
     if (this.state.movieList) {
       return (this.state.movieList.slice(0,14).reverse().map((item, i) => {
-<<<<<<< HEAD
-=======
-        console.log(item)
->>>>>>> 73bc835fca32e8f1b15321791f5bde72fc544624
         if(item.original_language == 'en'){
           return (
             <div className="movie-card" onClick={this.cardHandler} key={i}>
@@ -120,7 +98,7 @@ export default class Listings extends Component {
       <div className="listings-page">
         <div className="top-text">
           <h4>Popular Movies</h4>
-          <Link className="view-all" to="">view all popular movies<i className="fas fa-arrow-circle-right"></i></Link>
+          <Link className="view-all" to="">view all<i className="fas fa-arrow-circle-right"></i></Link>
         </div>
         <div className="container">
           { this.showMovies() }
